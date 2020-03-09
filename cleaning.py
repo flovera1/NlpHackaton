@@ -11,4 +11,4 @@ def cleaning(text):
       string = string.replace("\n","")
       sen += string
     txt += [sen]
-  print(txt)
+  return txt
