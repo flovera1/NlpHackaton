@@ -166,7 +166,7 @@ sentences_split = [s.lower().split(' ') for s in norm_corpus]
 print("Train Word2Vec on sentences_split")
 model = gensim.models.Word2Vec(sentences_split, size=50, min_count=3, sg=1)
 
-
+#https://ai.intelligentonlinetools.com/ml/text-clustering-doc2vec-word-embedding-machine-learning/
 from gensim.test.utils import get_tmpfile
 fname = get_tmpfile("my_word2vec_model")
 
