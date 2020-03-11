@@ -88,17 +88,12 @@ def text_to_phrases(text):
 
 
 phrases = text_to_phrases(textSents)
-
-
+#should look like -->
 #phrases = ['gemeente TESSENDERLO , vertegenwoordigd', 'TESSENDERLO , vertegenwoordigd door', ', vertegenwoordigd door het', 'vertegenwoordigd door het college', 'door het college van', 'de gemeente TESSENDERLO , vertegenwoordigd', 'gemeente TESSENDERLO , vertegenwoordigd door', 'TESSENDERLO , vertegenwoordigd door het', ', vertegenwoordigd door het college', 'vertegenwoordigd door het college van', 'de gemeente TESSENDERLO , vertegenwoordigd door', 'gemeente TESSENDERLO , vertegenwoordigd door het', 'TESSENDERLO , vertegenwoordigd door het college', ', vertegenwoordigd door het college van', 'de gemeente TESSENDERLO , vertegenwoordigd door het', 'gemeente TESSENDERLO , vertegenwoordigd door het college', 'TESSENDERLO , vertegenwoordigd door het college van', 'de gemeente TESSENDERLO , vertegenwoordigd door het college', 'gemeente TESSENDERLO , vertegenwoordigd door het college van', 'de gemeente TESSENDERLO , vertegenwoordigd door het college van', 'burgemeester en schepenen \n', ' \n', 'verwerende partij \n', ' \n', '\n', ' \n', '\n', ' \n', '\n', ' \n', ' \n', 'In zake: \n']
-
-
 
 REPLACE_BY_SPACE_RE = re.compile('[/(){}\[\]\|@,;]')
 BAD_SYMBOLS_RE = re.compile('[^0-9a-z #+_]')
-
-
-
+NEWLINE_SYMBOLS_RE = re.compile(r'[\n]')
 
 def clean_text(text):
     """
@@ -110,6 +105,7 @@ def clean_text(text):
     text = text.lower() # lowercase text
     text = REPLACE_BY_SPACE_RE.sub(' ', text) # replace REPLACE_BY_SPACE_RE symbols by space in text
     text = BAD_SYMBOLS_RE.sub('', text) # delete symbols which are in BAD_SYMBOLS_RE from text
+    text = NEWLINE_SYMBOLS_RE.sub('', text) # delete newline symbols
 	#text = ' '.join(word for word in text.split() if word not in STOPWORDS) # delete stopwors from text
     # remove numbers
     text_nonum = re.sub(r'\d+', '', text)
