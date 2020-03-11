@@ -1,4 +1,5 @@
-#from sklearn import CountVectorizer
+#https://medium.com/@cristhianboujon/how-to-list-the-most-common-words-from-text-corpus-using-scikit-learn-dad4d0cab41d
+#Usage python getTopNWordsFromPhrasesCorpus.py cleanedPhrasesCorpus.txt
 from sklearn.feature_extraction.text import CountVectorizer
 import sys
 import codecs
