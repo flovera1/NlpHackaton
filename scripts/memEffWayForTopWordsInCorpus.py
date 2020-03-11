@@ -1,4 +1,5 @@
 #https://stackoverflow.com/questions/35857519/efficiently-count-word-frequencies-in-python/35857833
+#Usage : python memEffWayForTopWordsInCorpus.py cleanedPhrasesCorpus_threeDocs.txt
 import sys
 import io
 from collections import Counter
