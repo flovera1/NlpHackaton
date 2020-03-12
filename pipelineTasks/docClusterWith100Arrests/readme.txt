@@ -5,7 +5,7 @@ First run the script makeBigBagUniqWordsFrmAllDocs.py which in turn calls a shel
 of 100 arrests. Inspect the file allUnigrams.txt for correctness. Keep in mind some intermediary txt files are produced.
 
 
-Then run the script docDictFormationWithCleaning.py to do further text processing using the unigrams and the arrests and make a dictionary
+Then run the script cleaningOn100DBRCFiles.py to do further text processing using the unigrams and the arrests and make a dictionary
 with keys=names of arrests and values = cleaned content of the arrests
 
 Finally do the clustering using model.py
